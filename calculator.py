@@ -17,7 +17,7 @@ class Calculator():
 
     def f_button_execute(self, number):
         current = entry.get()
-        entry.delete(0, 'end')
+        self.f_button_clear()
         entry.insert(0, str(current) + str(number))
 
     def f_button_clear(self):
@@ -26,26 +26,26 @@ class Calculator():
     def f_button_add(self):
         self.f_save_first()
         self.operation = '+'
-        entry.delete(0, 'end')
+        self.f_button_clear()
 
     def f_button_subtract(self):
         self.f_save_first()
         self.operation = '-'
-        entry.delete(0, 'end')
+        self.f_button_clear()
 
     def f_button_multiply(self):
         self.f_save_first()
         self.operation = '*'
-        entry.delete(0, 'end')
+        self.f_button_clear()
 
     def f_button_divide(self):
         self.f_save_first()
         self.operation = '/'
-        entry.delete(0, 'end')
+        self.f_button_clear()
 
     def f_button_equal(self):
         self.second_number = entry.get()
-        entry.delete(0, 'end')
+        self.f_button_clear()
         if self.operation == '+':
             entry.insert(0, int(self.first_number) + int(self.second_number))
         elif self.operation == '-':
